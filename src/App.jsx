@@ -13,7 +13,7 @@ import AddExpense from './pages/AddExpense/AddExpense'
 import AddBudget from './pages/AddBudget/AddBudget'
 import AddGoal from './pages/AddGoal/AddGoal'
 import * as goalService from './services/goals'
-import * as expensesService from './services/expenses'
+import * as expenseService from './services/expenses'
 import * as budgetService from './services/budgets'
 import * as incomeService from './services/incomes'
 import Transactions from './pages/Transactions/Transactions'
@@ -34,9 +34,20 @@ const App = () => {
     
   }
 
+  const handleDeleteExpense = id => {
+    expenseService.deleteOne(id)
+    .then(deletedExpense => setExpenses(expenses.filter(expense => expense._id !== deletedExpense._id)))
+    
+  }
+
   useEffect(() => {
     incomeService.getAll()
     .then(allIncomes => setIncomes(allIncomes))
+  }, [])
+
+  useEffect(() => {
+    expenseService.getAll()
+    .then(allExpenses => setExpenses(allExpenses))
   }, [])
 
   useEffect(() => {
@@ -50,7 +61,8 @@ const App = () => {
   } 
 
   const handleAddExpense = newExpenseData => {
-    setExpenses([...expenses, newExpenseData])
+    expenseService.create(newExpenseData)
+    .then(newExpense => setExpenses([...expenses, newExpense]))
   } 
 
   const handleAddGoal = newGoalData => {
@@ -99,7 +111,11 @@ const App = () => {
         <Route path='/add-expense' element={<AddExpense handleAddExpense={handleAddExpense} />} />  
         <Route path='/add-budget' element={<AddBudget handleAddBudget={handleAddBudget} />} />
         <Route path='/add-goal' element={<AddGoal handleAddGoal={handleAddGoal} />} />   
-        <Route path='/transactions' element={<Transactions incomes={incomes} handleDeleteIncome={handleDeleteIncome} />} />  
+        <Route path='/transactions' element={
+        <Transactions 
+        incomes={incomes} handleDeleteIncome={handleDeleteIncome} 
+        expenses={expenses} handleDeleteExpense={handleDeleteExpense}/>} 
+        />  
 
         </Routes>
     </>
