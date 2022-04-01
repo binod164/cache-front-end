@@ -21,7 +21,7 @@ import Budget from './pages/Budget/Budget'
 import EditBudget from './pages/EditBudget/EditBudget'
 import Goals from './pages/Goals/Goals'
 import EditGoal from './pages/EditGoal/EditGoal'
-import { Chart } from 'react-chartjs-2';
+import 'chart.js/auto';
 
 
 const App = () => {
