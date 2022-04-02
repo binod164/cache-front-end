@@ -1,5 +1,3 @@
-![Logo](public/cache-logo.png)
-
 # Cache  
 
 Cache is a budgeting app where users can manage their expenses, income and saving goals all in one place. It can be difficult to keep track of where your money is going, especially with the rise of online shopping and other digital transactions. Cache simplifies tracking your spending habits with specified budgets displayed visually each month.  
@@ -18,7 +16,7 @@ Click [here](https://cachefrontend.herokuapp.com/) to view the app.
 ![Wireframe](public/wireframe.png)  
  
 
-# Cache Screenshots
+# Screenshots
 
 <table>
   <tr>
