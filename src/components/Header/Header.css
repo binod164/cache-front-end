@@ -35,6 +35,7 @@
   place-items: center;
   padding: 5%;
   margin-top: 30%;
+  margin-bottom: 0;
 }
 
 .cache-logo {
@@ -82,7 +83,7 @@
   }
 
   .guest-landing {
-    margin-top: 0;
+    margin: 0;
   }
 
 }
