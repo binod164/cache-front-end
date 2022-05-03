@@ -46,11 +46,11 @@ const Landing = (props) => {
         </main>
         :
         <main className='guest-landing'>     
-          <div>
+          <div className='logo-container'>
             <img className="cache-logo" src="cache-logo.png" alt='cache logo'></img>
           </div> 
           <div className='landing-intro-container'>
-          <h4 className='landing-intro'>Experience an easy way to manage your money </h4>
+          <h4 className='landing-intro'>Experience an easy way to manage your money.</h4>
           </div>      
           <p className='title-nouser'>
             <Link className='login-link' to="/login"> Log In</Link> or 
