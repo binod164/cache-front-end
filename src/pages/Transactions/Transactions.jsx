@@ -12,6 +12,7 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 const Transactions = (props) => { 
   const [showGoals, setShowGoals] = useState(null)
   const [transactionLists, setTransactionLists] = useState(null)
+  const [activebutton, setActiveButton] = useState('All')
 
   useEffect(()=>{
     setTransactionLists(getTransactionList("all"))
@@ -19,7 +20,20 @@ const Transactions = (props) => {
 
   function handleClick(e) {
       setTransactionLists(getTransactionList(e.target.value))
-    } 
+      if (e.target.value === 'income') {
+        setActiveButton('Income')
+      } else if (e.target.value === 'expense'){
+        setActiveButton('Expenses')
+      } else {
+        setActiveButton('All')
+      }
+  }
+  
+  function getActiveIdName(buttonName) {
+    console.log(buttonName)
+    console.log(`ACTIVE: ${activebutton}`)
+    return buttonName === activebutton ? 'active-tab' : ''
+  }
 
   function getTransactionList(filterName) {
     if(filterName === "income") {
@@ -62,9 +76,9 @@ const Transactions = (props) => {
         </nav>
         <div className="transactions-section">
           <div className="income-expenses-tabs">
-            <button className="all-tab" value="all" onClick={handleClick}>All</button>
-            <button className="income-tab" value="income" onClick={handleClick}>Income</button>
-            <button className="expenses-tab" value="expense" onClick={handleClick}>Expenses</button>
+            <button className="all-tab" value="all" id={getActiveIdName('All')} onClick={handleClick}>All</button>
+            <button className="income-tab" value="income" id={getActiveIdName('Income')} onClick={handleClick}>Income</button>
+            <button className="expenses-tab" value="expense" id={getActiveIdName('Expenses')} onClick={handleClick}>Expenses</button>
           </div>   
           <div>
             {transactionLists}

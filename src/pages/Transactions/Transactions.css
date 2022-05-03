@@ -33,7 +33,7 @@
   background-color: white;
   padding-top: 8%;
   border-radius: 30px;
-  min-height: 150vh;
+  min-height: 82vh;
 }
 
 .current-balance{
@@ -78,6 +78,10 @@
   width: 60%;
   padding: 2%;
   margin-left: 18%;
+}
+
+#active-tab {
+  background-color: #28734a;
 }
 
 .transactions-title {
