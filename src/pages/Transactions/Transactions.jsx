@@ -30,8 +30,6 @@ const Transactions = (props) => {
   }
   
   function getActiveIdName(buttonName) {
-    console.log(buttonName)
-    console.log(`ACTIVE: ${activebutton}`)
     return buttonName === activebutton ? 'active-tab' : ''
   }
 

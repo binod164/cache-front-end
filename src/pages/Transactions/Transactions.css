@@ -76,12 +76,13 @@
   border: 1px solid #28734a;
   border-radius: 8px;
   width: 60%;
-  padding: 2%;
+  /* padding: 2%; */
   margin-left: 18%;
 }
 
 #active-tab {
   background-color: #28734a;
+  color: white;
 }
 
 .transactions-title {
@@ -91,19 +92,26 @@
 .income-tab, .all-tab, .expenses-tab{
   background-color: transparent;
   border: 0;
-  border-radius: 8px;
   color: #28734a;
   font-size: medium;
-  margin-left: 8%;
+  /* margin-left: 8%; */
+  padding: 3%;
+  width: 35%;
+  border-radius: 4px;
 }
 
 .income-tab{
-  margin-left: 12%;
+  /* margin-left: 12%; */
 }
 
 .all-tab{
   margin: 0;
   align-self: flex-start;
+  /* border-radius: 4px; */
+}
+
+.expenses-tab{
+  /* border-radius: 0px 4px 4px 0px; */
 }
 
 button > .active { 
