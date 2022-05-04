@@ -33,7 +33,7 @@
   background-color: white;
   padding-top: 8%;
   border-radius: 30px;
-  min-height: 150vh;
+  min-height: 82vh;
 }
 
 .current-balance{
@@ -76,8 +76,12 @@
   border: 1px solid #28734a;
   border-radius: 8px;
   width: 60%;
-  padding: 2%;
   margin-left: 18%;
+}
+
+#active-tab {
+  background-color: #28734a;
+  color: white;
 }
 
 .transactions-title {
@@ -87,14 +91,11 @@
 .income-tab, .all-tab, .expenses-tab{
   background-color: transparent;
   border: 0;
-  border-radius: 8px;
   color: #28734a;
   font-size: medium;
-  margin-left: 8%;
-}
-
-.income-tab{
-  margin-left: 12%;
+  padding: 3%;
+  width: 35%;
+  border-radius: 4px;
 }
 
 .all-tab{
